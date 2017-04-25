@@ -60,7 +60,7 @@ describe('puppies REST api', () => {
       .then(puppy => assert.deepEqual(puppy, fido));
   });
 
-  it('returns 404 if unicorn does not exist', () => {
+  it('returns 404 if puppy does not exist', () => {
     return request
       .get('/puppies/doesnotexist')
       .then(
@@ -70,7 +70,7 @@ describe('puppies REST api', () => {
 
       res => {
         assert.equal(res.status, 404);
-        assert.isOk(res.response.body.error);
+        assert.isOk(res.response.error);
       });
   });
 });
