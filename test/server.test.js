@@ -18,9 +18,9 @@ describe('GET /', () => {
   });
 });
 
-it.only('serves images out of public', () => {
+it('serves images out of public', () => {
   return request
-    .get('/images/panda.jpg')
+    .get('/images/puppy.jpg')
     .then(res => {
       return assert.equal(res.statusCode, 200);
     });
